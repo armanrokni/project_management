@@ -17,7 +17,7 @@ class CreateReportsTable extends Migration
             $table->increments('id');
             $table->tinyInteger('user_id');
             $table->tinyInteger('project_id');
-            $table->date('created_at');
+            $table->date('createdAt');
             $table->text('description');
             $table->timestamps();
         });

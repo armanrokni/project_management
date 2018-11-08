@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->char('username' , 50);
             $table->string('password');
             $table->string('email');
-            $table->srting('access');
+            $table->string('access');
             $table->tinyInteger('expertise_id');
             $table->rememberToken();
             $table->timestamps();
