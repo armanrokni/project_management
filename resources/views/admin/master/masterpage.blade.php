@@ -222,10 +222,10 @@
                             </li>
 
                             <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-cog"></i><span> technologies </span> </a>
+                                <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-cog"></i><span>امکانات</span> </a>
                                 <ul class="list-unstyled">
-                                    <li><a href="components-grid.html">submenue</a></li>
-                                    <li><a href="components-widgets.html">submenue</a></li>
+                                    <li><a href="components-grid.html">مهارت ها</a></li>
+                                    <li><a href="components-widgets.html">تکنولوژی ها</a></li>
                                 </ul>
                             </li>
 
