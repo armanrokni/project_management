@@ -8,6 +8,8 @@ use App\Exceptions;
 
 use Illuminate\Support\Facades\Validator;
 
+use App\Expertise;
+
 class ExpertiseController extends Controller
 {
     //
