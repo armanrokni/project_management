@@ -20,7 +20,6 @@ class ExpertiseController extends Controller
         Validator::make($request->all() , [
             'title' => 'required|max:50'
         ]);
-        
     }
     public function edit($id)
     {
