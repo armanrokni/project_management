@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('admin.master.masterpage');
 });
+
+#technology controller routes
+Route::get('/technology' , 'TechnologyController@show');
+
+#expertise controller routes
+Route::get('/expertise' , 'ExpertiseController@show');
+Route::post('/expertise' , 'ExpertiseController@add');
