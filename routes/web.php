@@ -21,3 +21,4 @@ Route::get('/technology' , 'TechnologyController@show');
 #expertise controller routes
 Route::get('/expertise' , 'ExpertiseController@show');
 Route::post('/expertise' , 'ExpertiseController@add');
+Route::get('/expertise/edit/{id}' , 'ExpertiseController@edit');

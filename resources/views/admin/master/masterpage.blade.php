@@ -439,7 +439,8 @@
         <script src="{{asset('')}}public/adminPanel/assets/js/wow.min.js"></script>
         <script src="{{asset('')}}public/adminPanel/assets/js/jquery.nicescroll.js"></script>
         <script src="{{asset('')}}public/adminPanel/assets/js/jquery.scrollTo.min.js"></script>
-
+        <script src="{{asset('')}}public/adminPanel/assets/plugins/notifyjs/js/notify.js"></script>
+        <script src="{{asset('')}}public/adminPanel/assets/plugins/notifications/notify-metro.js"></script>
 
         <script src="{{asset('')}}public/adminPanel/assets/js/jquery.core.js"></script>
         <script src="{{asset('')}}public/adminPanel/assets/js/jquery.app.js"></script>

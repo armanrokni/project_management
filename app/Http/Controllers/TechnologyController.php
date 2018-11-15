@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class TechonologyController extends Controller
+class TechnologyController extends Controller
 {
     public function show()
     {
