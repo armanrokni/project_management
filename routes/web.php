@@ -16,6 +16,7 @@ use Illuminate\Http\Request;
 Route::get('/', function () {
     return view('admin.master.masterpage');
 });
+
 Route::group(['prefix' => 'admin'], function(){
     Route::group(['prefix' => 'users'], function(){
         Route::get('insert','UserController@insertView' );
@@ -26,3 +27,10 @@ Route::group(['prefix' => 'admin'], function(){
         Route::get('delete/{id}', 'UserController@delete');
       });
 });
+
+#technology controller routes
+Route::get('/technology' , 'TechnologyController@show');
+
+#expertise controller routes
+Route::get('/expertise' , 'ExpertiseController@show');
+Route::post('/expertise' , 'ExpertiseController@add');
