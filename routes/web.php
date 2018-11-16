@@ -10,7 +10,19 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\User;
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return view('admin.master.masterpage');
+});
+Route::group(['prefix' => 'admin'], function(){
+    Route::group(['prefix' => 'users'], function(){
+        Route::get('insert','UserController@insertView' );
+        Route::post('insert', 'UserController@insert');
+        Route::get('/','UserController@index');
+        Route::get('edit/{id}', 'UserController@edit');
+        Route::post('update/{id}', 'UserController@update');
+        Route::get('delete/{id}', 'UserController@delete');
+      });
 });
