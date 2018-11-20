@@ -6,9 +6,14 @@
             <h3 class="m-t-0 header-title">مهارت ها</h3>
             <div class="row">
                 <div class="col-sm-6">
-                    @if(!empty(session('message')))
+                    @if(Session::get('message'))
                             <div class="button-list col-sm-12">
                                 <button class="btn btn-danger col-sm-6">{{session('message')}}</button>
+                            </div>
+                    @endif
+                    @if(Session::get('successMessage'))
+                            <div class="button-list col-sm-12">
+                                <button class="btn btn-success col-sm-6">{{session('successMessage')}}</button>
                             </div>
                     @endif
                     <table class="table table-striped">
