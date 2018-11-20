@@ -6,11 +6,22 @@
         <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
         <meta name="author" content="Coderthemes">
 
+        <link href="{{asset('')}}public/adminPanel/assets/plugins/bootstrap-tagsinput/css/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="{{asset('')}}public/adminPanel/assets/plugins/switchery/css/switchery.min.css" rel="stylesheet" />
+        <link href="{{asset('')}}public/adminPanel/assets/plugins/multiselect/css/multi-select.css"  rel="stylesheet" type="text/css" />
+        <link href="{{asset('')}}public/adminPanel/assets/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="{{asset('')}}public/adminPanel/assets/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" />
+        <link href="{{asset('')}}public/adminPanel/assets/plugins/bootstrap-touchspin/css/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
+
+
         <link rel="shortcut icon" href="{{asset('public/adminPanel/assets/images/favicon_1.ico')}}">
+
+        <link rel="stylesheet" href="{{asset('public/adminPanel/assets/plugins/magnific-popup/css/magnific-popup.css')}}" />
+        <link rel="stylesheet" href="{{asset('public/adminPanel/assets/plugins/jquery-datatables-editable/datatables.css')}}" />
 
         <title></title>
 
-        <link href="{{asset('public/adminPanel/assets/css/bootstrap-rtl.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('')}}public/adminPanel/assets/css/bootstrap-rtl.min.css" rel="stylesheet" type="text/css" />
         <link href="{{asset('')}}public/adminPanel/assets/css/core.css" rel="stylesheet" type="text/css" />
         <link href="{{asset('')}}public/adminPanel/assets/css/components.css" rel="stylesheet" type="text/css" />
         <link href="{{asset('')}}public/adminPanel/assets/css/icons.css" rel="stylesheet" type="text/css" />
@@ -18,7 +29,6 @@
         <link href="{{asset('')}}public/adminPanel/assets/css/responsive.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
-    
 
         <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -28,7 +38,7 @@
         <![endif]-->
 
         <script src="{{asset('')}}public/adminPanel/assets/js/modernizr.min.js"></script>
-        
+
     </head>
 
 
@@ -63,9 +73,9 @@
                                 <span class="clearfix"></span>
                             </div>
 
-                            
 
-                            
+
+
 
 
                             <ul class="nav navbar-nav navbar-right pull-right">
@@ -210,7 +220,7 @@
 
                             <li class="has_sub">
                                 <a href="" class="waves-effect"><i class="fa fa-home"></i> <span> Dashboard </span> </a>
-                                
+
                             </li>
 
                             <li class="has_sub">
@@ -237,7 +247,7 @@
                                 </ul>
                             </li>
 
-                            
+
 
                         </ul>
                         <div class="clearfix"></div>
@@ -245,13 +255,13 @@
                     <div class="clearfix"></div>
                 </div>
             </div>
-            <!-- Left Sidebar End --> 
+            <!-- Left Sidebar End -->
 
 
 
             <!-- ============================================================== -->
             <!-- Start right Content here -->
-            <!-- ============================================================== -->                      
+            <!-- ============================================================== -->
             <div class="content-page">
                 <!-- Start content -->
                 <div class="content">
@@ -265,11 +275,11 @@
                         </div>
 
                         <div style="min-height: 1000px;"></div>
-                        
+
 
 
                     </div> <!-- container -->
-                               
+
                 </div> <!-- content -->
 
                 <footer class="footer text-right">
@@ -277,8 +287,8 @@
                 </footer>
 
             </div>
-            
-            
+
+
             <!-- ============================================================== -->
             <!-- End Right content here -->
             <!-- ============================================================== -->
@@ -389,7 +399,7 @@
                             </a>
                             <span class="clearfix"></span>
                         </li>
-                    </ul>  
+                    </ul>
                 </div>
             </div>
             <!-- /Right-bar -->
@@ -398,7 +408,7 @@
         <!-- END wrapper -->
 
 
-    
+
         <script>
             var resizefunc = [];
         </script>
@@ -414,12 +424,40 @@
         <script src="{{asset('')}}public/adminPanel/assets/js/wow.min.js"></script>
         <script src="{{asset('')}}public/adminPanel/assets/js/jquery.nicescroll.js"></script>
         <script src="{{asset('')}}public/adminPanel/assets/js/jquery.scrollTo.min.js"></script>
+<<<<<<< HEAD
         <script src="{{asset('')}}public/adminPanel/assets/plugins/notifyjs/js/notify.js"></script>
         <script src="{{asset('')}}public/adminPanel/assets/plugins/notifications/notify-metro.js"></script>
+=======
+
+        <script src="{{asset('')}}public/adminPanel/assets/plugins/tiny-editable/mindmup-editabletable.js"></script>
+        <script src="{{asset('')}}public/adminPanel/assets/pages/datatables.editable.init.js"></script>
+        <script src="{{asset('')}}public/adminPanel/assets/plugins/magnific-popup/js/jquery.magnific-popup.min.js"></script>
+        <script src="{{asset('')}}public/adminPanel/assets/plugins/tiny-editable/numeric-input-example.js"></script>
+        <script src="{{asset('')}}public/adminPanel/assets/plugins/jquery-datatables-editable/jquery.dataTables.js"></script>
+  	    <script src="assets/plugins/datatables/dataTables.bootstrap.js"></script>
+>>>>>>> origin
 
         <script src="{{asset('')}}public/adminPanel/assets/js/jquery.core.js"></script>
         <script src="{{asset('')}}public/adminPanel/assets/js/jquery.app.js"></script>
 
-    
+        <script type="text/javascript" src="{{asset('')}}public/adminPanel/assets/pages/jquery.form-advanced.init.js"></script>
+        <script src="{{asset('')}}public/adminPanel/assets/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js" type="text/javascript"></script>
+        <script src="{{asset('')}}public/adminPanel/assets/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js"></script>
+        <script src="{{asset('')}}public/adminPanel/assets/plugins/switchery/js/switchery.min.js"></script>
+        <script type="text/javascript" src="{{asset('')}}public/adminPanel/assets/plugins/multiselect/js/jquery.multi-select.js"></script>
+        <script type="text/javascript" src="{{asset('')}}public/adminPanel/assets/plugins/jquery-quicksearch/jquery.quicksearch.js"></script>
+        <script src="{{asset('')}}public/adminPanel/assets/plugins/select2/js/select2.min.js" type="text/javascript"></script>
+        <script src="{{asset('')}}public/adminPanel/assets/plugins/bootstrap-select/js/bootstrap-select.min.js" type="text/javascript"></script>
+        <script src="{{asset('')}}public/adminPanel/assets/plugins/bootstrap-touchspin/js/jquery.bootstrap-touchspin.min.js" type="text/javascript"></script>
+        <script src="{{asset('')}}public/adminPanel/assets/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
+
+        <script type="text/javascript" src="{{asset('')}}public/adminPanel/assets/plugins/autocomplete/jquery.mockjax.js"></script>
+        <script type="text/javascript" src="{{asset('')}}public/adminPanel/assets/plugins/autocomplete/jquery.autocomplete.min.js"></script>
+        <script type="text/javascript" src="{{asset('')}}public/adminPanel/assets/plugins/autocomplete/countries.js"></script>
+        <script type="text/javascript" src="{{asset('')}}public/adminPanel/assets/pages/autocomplete.js"></script>
+        <script>
+  			$('#mainTable').editableTableWidget().numericInputExample().find('td:first').focus();
+
+  		</script>
     </body>
 </html>
