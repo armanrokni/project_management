@@ -24,7 +24,7 @@ class TechnologyController extends Controller
             'title' => 'required|max:50|unique:technologies,title',
             'icon'  => 'required|max:100|image|file'
         ])->validate();
-
+        
         $tech = new Technology();
         $tech->icon = $request->file('icon')->store('icons' , 'public');
         $tech->title = $request->title;
