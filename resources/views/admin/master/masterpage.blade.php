@@ -190,13 +190,13 @@
                                     <a href="#" class="right-bar-toggle waves-effect waves-light"><i class="far fa-comments"></i></a>
                                 </li>
                                 <li class="dropdown top-menu-item-xs">
-                                    <a href="" class="dropdown-toggle profile waves-effect waves-light" data-toggle="dropdown" aria-expanded="true"><img src="{{asset('')}}public/adminPanel/assets/images/users/avatar-1.jpg" alt="user-img" class="img-circle"> </a>
+                                    <a href="" class="dropdown-toggle profile waves-effect waves-light" data-toggle="dropdown" aria-expanded="true"><img src="{{url('public').'/'.\Auth()->user()->avatar}}" alt="user-img" class="img-circle"> </a>
                                     <ul class="dropdown-menu">
                                         <li><a href="javascript:void(0)"><i class="ti-user m-r-10 text-custom"></i> Profile</a></li>
                                         <li><a href="javascript:void(0)"><i class="ti-settings m-r-10 text-custom"></i> Settings</a></li>
                                         <li><a href="javascript:void(0)"><i class="ti-lock m-r-10 text-custom"></i> Lock screen</a></li>
                                         <li class="divider"></li>
-                                        <li><a href="javascript:void(0)"><i class="ti-power-off m-r-10 text-danger"></i> Logout</a></li>
+                                        <li><a href="{{url('logout')}}"><i class="ti-power-off m-r-10 text-danger"></i> Logout</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -219,7 +219,7 @@
                         	<li class="text-muted menu-title">Navigation</li>
 
                             <li class="has_sub">
-                                <a href="" class="waves-effect"><i class="fa fa-home"></i> <span> Dashboard </span> </a>
+                                <a href="{{url('/')}}" class="waves-effect"><i class="fa fa-home"></i> <span> Dashboard </span> </a>
 
                             </li>
 
@@ -242,8 +242,9 @@
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-users"></i> <span> users </span>  </a>
                                 <ul class="list-unstyled">
-                                	<li><a href="icons-glyphicons.html">Glyphicons</a></li>
-                                    <li><a href="icons-materialdesign.html">Material Design</a></li>
+                                	<li><a href="{{url('admin/users/insert')}}">افزودن</a></li>
+                                  <li><a href="{{url('admin/users')}}">همه کاربران</a></li>
+                                  <li><a href="{{url('profile')}}">پروفایل</a></li>
                                 </ul>
                             </li>
 
@@ -271,7 +272,7 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="btn-group pull-right m-t-15">
-                                    <button type="button" class="btn btn-default dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="false">Settings <span class="m-l-5"><i class="fa fa-cog"></i></span></button>
+
                                     <ul class="dropdown-menu drop-menu-right" role="menu">
                                         <li><a href="#">Action</a></li>
                                         <li><a href="#">Another action</a></li>
@@ -281,18 +282,6 @@
                                     </ul>
                                 </div>
 
-                                <h4 class="page-title">Small menu</h4>
-                                <ol class="breadcrumb">
-									<li>
-										<a href="#">Ubold</a>
-									</li>
-									<li>
-										<a href="#">Layouts</a>
-									</li>
-									<li class="active">
-										Small menu
-									</li>
-								</ol>
                             </div>
                             <div class="col-sm-12">
                                 @yield('content')
