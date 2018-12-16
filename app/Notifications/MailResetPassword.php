@@ -42,7 +42,7 @@ class MailResetPassword extends Notification
     {
         return (new MailMessage)
                     ->line('شما این ایمیل را دریافت کردید زیرا ما از اکانت شما درخواست بازیابی رمزعبور دریافت کرده‌ایم.')
-                    ->action('Reset Password', url('password/reset/token', ['token' => $this->token]))
+                    ->action('Reset Password', url('/password/reset/token', ['token' => $this->token]))
                     ->line('اگر شما درخواست بازیابی رمزعبور ارسال نکرده‌اید، اقدامی نکنید.');
     }
 
