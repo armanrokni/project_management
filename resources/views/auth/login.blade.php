@@ -64,18 +64,6 @@
                     </div>
                 </div>
 
-                <div class="form-group ">
-                    <div class="col-xs-12">
-                        <div class="checkbox checkbox-primary">
-                            <input id="checkbox-signup" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                            <label for="checkbox-signup">
-                                {{ __('مرا بخاطر بسپار') }}
-                            </label>
-                        </div>
-
-                    </div>
-                </div>
-
                 <div class="form-group text-center m-t-40">
                     <div class="col-xs-12">
                         <button class="btn btn-green-dark btn-block text-uppercase waves-effect waves-light" type="submit">{{ __('ورود') }}</button>
