@@ -13,7 +13,7 @@
 use App\User;
 use App\Http\Middleware\CheckLogin;
 use Illuminate\Http\Request;
-
+use App\Libraries\Sms;
 
 Route::group(['middleware' => ['checkLogin', 'checkRole']], function(){
     Route::get('/', 'DashboardController@index');
@@ -47,7 +47,7 @@ Route::group(['namespace' => 'Auth'],function(){
     // Password Reset Routes...
     Route::get('password/reset', 'ForgotPasswordController@showLinkRequestForm')->name('password.reset');
     Route::post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-    Route::get('password/reset/{token}', 'ResetPasswordController@showResetForm')->name('password.reset.token');
+    Route::get('password/reset/token/{token}', 'ResetPasswordController@showResetForm')->name('password.reset.token');
     Route::post('password/reset', 'ResetPasswordController@reset')->name('password.update');
 });
 
