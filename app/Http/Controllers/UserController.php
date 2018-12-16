@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use App\Libraries\Sms;
 use App\User;
 use App\Expertise;
 use App\lib\Jdf;
@@ -33,10 +34,11 @@ class UserController extends Controller
     $avatar->move(public_path().'/uploads/logos/', $avatarname);
 
     $request->merge(['access' => implode(',', (array) $request->get('access'))]);
-
+    $pass = mt_rand(000000, 999999);
+    $sms = new Sms($request->phone, 'رمز عبور شما در آوند : '.$pass);
     $user = new User($request->all());
     $user->avatar = 'uploads/logos/'.$avatarname;
-    $user->password = \Hash::make('1234');
+    $user->password = \Hash::make($pass);
     $user->save();
     return redirect('admin/users');
   }
