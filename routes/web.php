@@ -18,11 +18,7 @@ Route::group(['middleware' => ['checkLogin', 'checkRole']], function(){
     Route::get('/', 'DashboardController@index');
 });
 
-<<<<<<< HEAD
-Route::group(['prefix' => 'admin'], function(){
-=======
 Route::group(['prefix' => 'admin', 'middleware' => ['checkLogin', 'checkRole']], function(){
->>>>>>> 54cadc0c71d121ca6e32ed8e6e920a9019ada76b
     Route::group(['prefix' => 'users'], function(){
         Route::get('insert','UserController@insertView' );
         Route::post('insert', 'UserController@insert');
@@ -39,7 +35,6 @@ Route::group(['middleware' => 'checkLogin'], function(){
     Route::post('/profile/update', 'ProfileController@update');
 });
 
-<<<<<<< HEAD
 #technology controller routes
 Route::get('/technology' , 'TechnologyController@show');
 Route::post('/technology' , 'TechnologyController@add');
@@ -53,21 +48,3 @@ Route::post('/expertise' , 'ExpertiseController@add');
 Route::get('/expertise/edit/{id}' , 'ExpertiseController@edit')->where('id', '[0-9]+');
 Route::post('/expertise/update/{id}' , 'ExpertiseController@update')->where('id', '[0-9]+');
 Route::get('/expertise/delete/{id}' , 'ExpertiseController@delete')->where('id', '[0-9]+');
-=======
-// Auth::routes();
-
-Route::group(['namespace' => 'Auth'],function(){
-    // Authentication Routes...
-    Route::get('login', 'LoginController@showLoginForm')->name('login');
-    Route::post('login', 'LoginController@login');
-    Route::get('logout', 'LoginController@logout')->name('logout');
-
-    // Password Reset Routes...
-    Route::get('password/reset', 'ForgotPasswordController@showLinkRequestForm')->name('password.reset');
-    Route::post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-    Route::get('password/reset/token/{token}', 'ResetPasswordController@showResetForm')->name('password.reset.token');
-    Route::post('password/reset', 'ResetPasswordController@reset')->name('password.update');
-});
-
-Route::get('/home', 'HomeController@index')->name('home');
->>>>>>> 54cadc0c71d121ca6e32ed8e6e920a9019ada76b

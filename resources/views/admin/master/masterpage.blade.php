@@ -271,8 +271,6 @@
                         <!-- Page-Title -->
                         <div class="row">
                             <div class="col-sm-12">
-<<<<<<< HEAD
-=======
                                 <div class="btn-group pull-right m-t-15">
 
                                     <ul class="dropdown-menu drop-menu-right" role="menu">
@@ -286,7 +284,6 @@
 
                             </div>
                             <div class="col-sm-12">
->>>>>>> 54cadc0c71d121ca6e32ed8e6e920a9019ada76b
                                 @yield('content')
                             </div>
                         </div>
@@ -441,10 +438,6 @@
         <script src="{{asset('')}}public/adminPanel/assets/js/wow.min.js"></script>
         <script src="{{asset('')}}public/adminPanel/assets/js/jquery.nicescroll.js"></script>
         <script src="{{asset('')}}public/adminPanel/assets/js/jquery.scrollTo.min.js"></script>
-<<<<<<< HEAD
-        <script src="{{asset('')}}public/adminPanel/assets/plugins/notifyjs/js/notify.js"></script>
-        <script src="{{asset('')}}public/adminPanel/assets/plugins/notifications/notify-metro.js"></script>
-=======
 
         <script src="{{asset('')}}public/adminPanel/assets/plugins/tiny-editable/mindmup-editabletable.js"></script>
         <script src="{{asset('')}}public/adminPanel/assets/pages/datatables.editable.init.js"></script>
@@ -452,7 +445,6 @@
         <script src="{{asset('')}}public/adminPanel/assets/plugins/tiny-editable/numeric-input-example.js"></script>
         <script src="{{asset('')}}public/adminPanel/assets/plugins/jquery-datatables-editable/jquery.dataTables.js"></script>
   	    <script src="assets/plugins/datatables/dataTables.bootstrap.js"></script>
->>>>>>> origin
 
         <script src="{{asset('')}}public/adminPanel/assets/js/jquery.core.js"></script>
         <script src="{{asset('')}}public/adminPanel/assets/js/jquery.app.js"></script>
