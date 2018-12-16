@@ -28,6 +28,13 @@
                   </tr>
               </thead>
               <tbody>
+                <?php
+
+                use \App\lib\Jdf;
+                $jdf = new Jdf;
+
+                 ?>
+
                 @if($users->first())
                 @foreach ($users as $key => $user)
                   <tr class="gradeX">
@@ -38,7 +45,7 @@
                       <td>{{$user->email}}</td>
                       <td>{{$user->Expertise->title}}</td>
                       <td>{{$user->access}}</td>
-                      <td>{{$user->lastLogin}}</td>
+                      @if($user->lastLogin > 1) <td>{{$jdf->jdate('H:i, Y-n-j', $user->lastLogin)}}</td> @else <td></td> @endif
                       <td class="actions">
                           <a href="{{url('admin/users/edit').'/'.$user->id}}" class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>
                           <a href="{{url('admin/users/delete').'/'.$user->id}}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>

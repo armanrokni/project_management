@@ -66,18 +66,6 @@
                 <div class="navbar navbar-default" role="navigation">
                     <div class="container">
                         <div class="">
-                            <div class="pull-left">
-                                <button class="button-menu-mobile open-left waves-effect waves-light">
-                                    <i class="md md-menu"></i>
-                                </button>
-                                <span class="clearfix"></span>
-                            </div>
-
-
-
-
-
-
                             <ul class="nav navbar-nav navbar-right pull-right">
                                 <li class="dropdown top-menu-item-xs">
                                     <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">
@@ -208,56 +196,6 @@
             <!-- Top Bar End -->
 
 
-            <!-- ========== Left Sidebar Start ========== -->
-
-            <div class="left side-menu side-menu-sm">
-                <div class="sidebar-inner slimscrollleft">
-                    <!--- Divider -->
-                    <div id="sidebar-menu">
-                        <ul>
-
-                        	<li class="text-muted menu-title">Navigation</li>
-
-                            <li class="has_sub">
-                                <a href="{{url('/')}}" class="waves-effect"><i class="fa fa-home"></i> <span> Dashboard </span> </a>
-
-                            </li>
-
-                            <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-project-diagram"></i> <span>projects</span>  </a>
-                                <ul class="list-unstyled">
-                                    <li><a href="ui-buttons.html">submenue</a></li>
-                                    <li><a href="ui-loading-buttons.html">submenue</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-cog"></i><span>امکانات</span> </a>
-                                <ul class="list-unstyled">
-                                    <li><a href="{{url('/expertise')}}">مهارت ها</a></li>
-                                    <li><a href="{{url('/technology')}}">تکنولوژی ها</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-users"></i> <span> users </span>  </a>
-                                <ul class="list-unstyled">
-                                	<li><a href="{{url('admin/users/insert')}}">افزودن</a></li>
-                                  <li><a href="{{url('admin/users')}}">همه کاربران</a></li>
-                                  <li><a href="{{url('profile')}}">پروفایل</a></li>
-                                </ul>
-                            </li>
-
-
-
-                        </ul>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <!-- Left Sidebar End -->
-
 
 
             <!-- ============================================================== -->
@@ -271,23 +209,62 @@
                         <!-- Page-Title -->
                         <div class="row">
                             <div class="col-sm-12">
-<<<<<<< HEAD
-=======
-                                <div class="btn-group pull-right m-t-15">
 
-                                    <ul class="dropdown-menu drop-menu-right" role="menu">
-                                        <li><a href="#">Action</a></li>
-                                        <li><a href="#">Another action</a></li>
-                                        <li><a href="#">Something else here</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="#">Separated link</a></li>
-                                    </ul>
+                              <div class="card-box">
+
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <form class="form-horizontal" role="form" action="{{url('profile/update')}}" method="post" enctype="multipart/form-data">
+                                      {{csrf_field()}}
+                                      <h1 class="m-t-0 header-title">پروفایل {{$profile->fullname}}</h1>
+                                                <div class="form-group">
+                                                    <div class="col-md-10">
+                                                      <label for="fullname">نام و نام خانوادگی</label>
+                                                        <input type="text" name="fullname" class="form-control" value="{{$profile->fullname}}">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-md-10">
+                                                      <label for="phone">تلفن همراه</label>
+                                                        <input type="text" name="phone" class="form-control" value="{{$profile->phone}}">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-md-10">
+                                                      <label for="email">پست الکترونیک</label>
+                                                        <input type="email" id="example-email" name="email" class="form-control" value="{{$profile->email}}">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-md-10">
+                                                      <label for="password">تغییر رمز عبور</label>
+                                                        <input type="password" name="password" class="form-control" placeholder="تغییر پسورد پیش فرض">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                  <span><h5><b>تخصص ها</b></h5></span>
+                                                  <br>
+                                                      <p>{{$profile->Expertise->title}}</p>
+                                                </div>
+                                                <div class="form-group">
+                                                  <span><h5><b>انتخاب تصویر پروفایل</b></h5></span>
+                                                  <br>
+                                                  <input type="file" class="filestyle" value="{{url('public').'/'.$profile->avatar}}" name="avatar">
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-md-10">
+                                                      <label for="lastLogin">آخرین ورود</label>
+                                                        <input type="text" readonly="" class="form-control" name="lastLogin" value="{{$profile->lastLogin}}">
+                                                    </div>
+                                                </div>
+                                                  <button type="submit" class="btn btn-default btn-rounded waves-effect waves-light">ثبت</button>
+                                            </form>
+                                  </div>
                                 </div>
-
-                            </div>
-                            <div class="col-sm-12">
->>>>>>> 54cadc0c71d121ca6e32ed8e6e920a9019ada76b
-                                @yield('content')
+                              </div>
+                              <div style="width:50%" dir="ltr">
+                                <img src="{{url('public').'/'.$profile->avatar}}" alt="" width="300px" height="300px">
+                              </div>
                             </div>
                         </div>
 
@@ -441,10 +418,6 @@
         <script src="{{asset('')}}public/adminPanel/assets/js/wow.min.js"></script>
         <script src="{{asset('')}}public/adminPanel/assets/js/jquery.nicescroll.js"></script>
         <script src="{{asset('')}}public/adminPanel/assets/js/jquery.scrollTo.min.js"></script>
-<<<<<<< HEAD
-        <script src="{{asset('')}}public/adminPanel/assets/plugins/notifyjs/js/notify.js"></script>
-        <script src="{{asset('')}}public/adminPanel/assets/plugins/notifications/notify-metro.js"></script>
-=======
 
         <script src="{{asset('')}}public/adminPanel/assets/plugins/tiny-editable/mindmup-editabletable.js"></script>
         <script src="{{asset('')}}public/adminPanel/assets/pages/datatables.editable.init.js"></script>
@@ -452,7 +425,6 @@
         <script src="{{asset('')}}public/adminPanel/assets/plugins/tiny-editable/numeric-input-example.js"></script>
         <script src="{{asset('')}}public/adminPanel/assets/plugins/jquery-datatables-editable/jquery.dataTables.js"></script>
   	    <script src="assets/plugins/datatables/dataTables.bootstrap.js"></script>
->>>>>>> origin
 
         <script src="{{asset('')}}public/adminPanel/assets/js/jquery.core.js"></script>
         <script src="{{asset('')}}public/adminPanel/assets/js/jquery.app.js"></script>

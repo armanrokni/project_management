@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Notifications\MailResetPassword;
 
 class User extends Authenticatable
 {
@@ -27,6 +28,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+    *send a password reset email to the users
+    */
+    public function SendPasswordResetNotification($token){
+      $this->notify(new MailResetPassword($token));
+    }
 
     public function Expertise(){
      return $this->belongsTo('App\Expertise');

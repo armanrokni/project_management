@@ -51,19 +51,19 @@
                               <span><h5><b>دسترسی خاص</b></h5></span>
                               <br>
                                 <input id="checkbox11" type="checkbox" name="access[]" value="u"
-                                @if($user->access == 'u') checked = "checked" @endif>
+                                @if(in_array('u' , $access)) checked = "checked" @endif>
                                 <label for="checkbox11">مدیریت کاربران</label>
                                 <input id="checkbox11" type="checkbox" name="access[]" value="p"
-                                @if($user->access == 'p') checked = "checked" @endif>
+                                @if(in_array('p' , $access)) checked = "checked" @endif>
                                 <label for="checkbox11">مدیریت پروژه</label>
                                 <input id="checkbox11" type="checkbox" name="access[]" value="r"
-                                @if($user->access == 'r') checked = "checked" @endif>
+                                @if(in_array('r' , $access)) checked = "checked" @endif>
                                 <label for="checkbox11">مدیریت گزارشات</label>
                                 <input id="checkbox11" type="checkbox" name="access[]" value="c"
-                                @if($user->access == 'c') checked = "checked" @endif>
+                                @if(in_array('c' , $access)) checked = "checked" @endif>
                                 <label for="checkbox11">مدیریت گفتگوها</label>
                                 <input id="checkbox11" type="checkbox" name="access[]" value="ut"
-                                @if($user->access == 'ut') checked = "checked" @endif>
+                                @if(in_array('ut' , $access)) checked = "checked" @endif>
                                 <label for="checkbox11">امکانات</label>
                             </div>
                         </div>
