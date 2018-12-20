@@ -14,11 +14,11 @@ use App\Http\Middleware\CheckLogin;
 use Illuminate\Http\Request;
 use App\Libraries\Sms;
 
-Route::group(['middleware' => ['checkLogin', 'checkRole']], function(){
+Route::group(['middleware' => ['CheckLogin', 'checkRole']], function(){
     Route::get('/', 'DashboardController@index');
 });
 
-Route::group(['prefix' => 'admin', 'middleware' => ['checkLogin', 'checkRole']], function(){
+Route::group(['prefix' => 'admin', 'middleware' => ['CheckLogin', 'checkRole']], function(){
     Route::group(['prefix' => 'users'], function(){
         Route::get('insert','UserController@insertView' );
         Route::post('insert', 'UserController@insert');
