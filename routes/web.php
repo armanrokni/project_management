@@ -14,7 +14,6 @@
 Route::get('/', function () {
     return view('admin.master.masterpage');
 });
-
 #technology controller routes
 Route::get('/technology' , 'TechnologyController@show');
 Route::post('/technology' , 'TechnologyController@add');
