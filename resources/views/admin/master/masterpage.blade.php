@@ -429,7 +429,6 @@
         </script>
 
         <!-- jQuery  -->
-<<<<<<< HEAD
         <script src="{{asset('')}}public/adminPanel/assets/js/jquery.min.js"></script>
         <script src="{{asset('')}}public/adminPanel/assets/js/bootstrap-rtl.min.js"></script>
         <script src="{{asset('')}}public/adminPanel/assets/js/detect.js"></script>
@@ -447,7 +446,6 @@
         <script src="{{asset('')}}public/adminPanel/assets/plugins/tiny-editable/numeric-input-example.js"></script>
         <script src="{{asset('')}}public/adminPanel/assets/plugins/jquery-datatables-editable/jquery.dataTables.js"></script>
   	    <script src="assets/plugins/datatables/dataTables.bootstrap.js"></script>
-=======
         <script src="{{ asset('adminPanel/assets/js/jquery.min.js') }}"></script>
         <script src="{{ asset('adminPanel/assets/js/bootstrap-rtl.min.js') }}"></script>
         <script src="{{ asset('adminPanel/assets/js/detect.js') }}"></script>
@@ -458,10 +456,6 @@
         <script src="{{ asset('adminPanel/assets/js/wow.min.js') }}"></script>
         <script src="{{ asset('adminPanel/assets/js/jquery.nicescroll.js') }}"></script>
         <script src="{{ asset('adminPanel/assets/js/jquery.scrollTo.min.js') }}"></script>
-<<<<<<< HEAD
-        <script src="{{ asset('adminPanel/assets/plugins/notifyjs/js/notify.js') }}"></script>
-        <script src="{{ asset('adminPanel/assets/plugins/notifications/notify-metro.js') }}"></script>
-=======
 
         <script src="{{ asset('adminPanel/assets/plugins/tiny-editable/mindmup-editabletable.js') }}"></script>
         <script src="{{ asset('adminPanel/assets/pages/datatables.editable.init.js') }}"></script>
@@ -469,8 +463,7 @@
         <script src="{{ asset('adminPanel/assets/plugins/tiny-editable/numeric-input-example.js') }}"></script>
         <script src="{{ asset('adminPanel/assets/plugins/jquery-datatables-editable/jquery.dataTables.js') }}"></script>
   	    <script src="{{ asset('adminPanel/assets/plugins/datatables/dataTables.bootstrap.js') }}"></script>
->>>>>>> origin
->>>>>>> 1eb32beb3cff9d29df480c6f592b4ee0ed264942
+
 
         <script src="{{ asset('adminPanel/assets/js/jquery.core.js') }}"></script>
         <script src="{{ asset('adminPanel/assets/js/jquery.app.js') }}"></script>
