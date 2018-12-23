@@ -212,20 +212,16 @@
                                 <a href="" class="waves-effect"><i class="fa fa-home"></i> <span> Dashboard </span> </a>
                                 
                             </li>
-
                             <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-project-diagram"></i> <span>projects</span>  </a>
-                                <ul class="list-unstyled">
-                                    <li><a href="ui-buttons.html">submenue</a></li>
-                                    <li><a href="ui-loading-buttons.html">submenue</a></li>
-                                </ul>
+                                <a href="{{url('project')}}" class="waves-effect"><i class="fa fa-project-diagram"></i> <span>پروژه ها</span>  </a>
+                               
                             </li>
 
                             <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-cog"></i><span>امکانات</span> </a>
+                                <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-cog"></i><span> technologies </span> </a>
                                 <ul class="list-unstyled">
-                                    <li><a href="{{url('/expertise')}}">مهارت ها</a></li>
-                                    <li><a href="{{url('/technology')}}">تکنولوژی ها</a></li>
+                                    <li><a href="components-grid.html">submenue</a></li>
+                                    <li><a href="components-widgets.html">submenue</a></li>
                                 </ul>
                             </li>
 
@@ -259,31 +255,7 @@
 
                         <!-- Page-Title -->
                         <div class="row">
-                            <div class="col-sm-12">
-                                <div class="btn-group pull-right m-t-15">
-                                    <button type="button" class="btn btn-default dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="false">Settings <span class="m-l-5"><i class="fa fa-cog"></i></span></button>
-                                    <ul class="dropdown-menu drop-menu-right" role="menu">
-                                        <li><a href="#">Action</a></li>
-                                        <li><a href="#">Another action</a></li>
-                                        <li><a href="#">Something else here</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="#">Separated link</a></li>
-                                    </ul>
-                                </div>
-
-                                <h4 class="page-title">Small menu</h4>
-                                <ol class="breadcrumb">
-									<li>
-										<a href="#">Ubold</a>
-									</li>
-									<li>
-										<a href="#">Layouts</a>
-									</li>
-									<li class="active">
-										Small menu
-									</li>
-								</ol>
-                            </div>
+                            
                             <div class="col-sm-12">
                                 @yield('content')
                             </div>
@@ -297,9 +269,7 @@
                                
                 </div> <!-- content -->
 
-                <footer class="footer text-right">
-                    © 2016. All rights reserved.
-                </footer>
+                
 
             </div>
             
@@ -439,6 +409,14 @@
         <script src="{{asset('')}}public/adminPanel/assets/js/wow.min.js"></script>
         <script src="{{asset('')}}public/adminPanel/assets/js/jquery.nicescroll.js"></script>
         <script src="{{asset('')}}public/adminPanel/assets/js/jquery.scrollTo.min.js"></script>
+
+        <script src="{{asset('')}}public/adminPanel/assets/plugins/moment/moment.js"></script>
+        <script src="{{asset('')}}public/adminPanel/assets/plugins/timepicker/bootstrap-timepicker.js"></script>
+        <script src="{{asset('')}}public/adminPanel/assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+        <script src="{{asset('')}}public/adminPanel/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+        <script src="{{asset('')}}public/adminPanel/assets/plugins/clockpicker/js/bootstrap-clockpicker.min.js"></script>
+        <script src="{{asset('')}}public/adminPanel/assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+
 
 
         <script src="{{asset('')}}public/adminPanel/assets/js/jquery.core.js"></script>

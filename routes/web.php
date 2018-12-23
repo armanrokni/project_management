@@ -15,9 +15,45 @@ Route::get('/', function () {
     return view('admin.master.masterpage');
 });
 
-#technology controller routes
-Route::get('/technology' , 'TechnologyController@show');
+	Route::prefix('project')->group(function(){
 
-#expertise controller routes
-Route::get('/expertise' , 'ExpertiseController@show');
-Route::post('/expertise' , 'ExpertiseController@add');
+		Route::get('/','ProjectController@index');
+		Route::post('insert','ProjectController@insert');
+		Route::get('edit/{id}','ProjectController@edit');
+		Route::post('edit','ProjectController@update');
+		Route::get('delete/{id}','ProjectController@delete');
+		Route::get('info/{id}','ProjectController@showInfo');
+		Route::post('user','UserController@insert');
+		Route::get('user/delete/{project_id}/{user_id}','UserController@deleteUser');
+		Route::post('file','FileController@insert');
+		Route::get('file/delete/{id}','FileController@delete');
+		Route::post('reports','ReportsController@insert');
+		Route::get('reports/delete/{id}','ReportsController@delete');
+		Route::post('timeLine','timeLineController@insert');
+		Route::post('timeLine/users','timeLineController@show');
+		Route::get('timeLine/delete/{id}','timeLineController@delete');
+		Route::get('timeLine/edit/{id}','timeLineController@finished');
+
+
+	});
+
+	// Route::prefix('reports')->group(function(){
+
+	// 	Route::get('/','ReportsController@index');
+	// 	Route::post('insert','ReportsController@insert');
+	// 	Route::get('edit/{id}','ReportsController@edit');
+	// 	Route::post('edit','ReportsController@update');
+	// 	Route::get('delete/{id}','ReportsController@delete');
+		
+	// });
+
+	Route::prefix('timeLine')->group(function(){
+
+		Route::get('/','Time_lineController@index');
+		Route::post('insert','Time_lineController@insert');
+		Route::get('edit/{id}','Time_lineController@edit');
+		Route::post('edit','Time_lineController@update');
+		Route::get('delete/{id}','Time_lineController@delete');
+		
+	});
+	 
