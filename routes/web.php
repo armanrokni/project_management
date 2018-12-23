@@ -28,6 +28,24 @@ Route::group(['prefix' => 'admin', 'middleware' => ['checkLogin', 'checkRole']],
         Route::get('delete/{id}', 'UserController@delete');
       });
 
+
+
+
+    // Routes for chats API
+	Route::group([/*'middleware' => 'admin'*/], function() {
+
+		Route::get('chat', 'ChatsController@index');
+		Route::get('messages/{id}', 'ChatsController@fetchMessages');
+
+
+		Route::post('/users', 'ChatsController@users');
+		Route::post('seen/{id}', 'ChatsController@seen');
+		Route::post('messages', 'ChatsController@sendMessage');
+		Route::post('user/{user}/online', 'ChatsController@Online');
+
+	});
+
+
 });
 
 Route::group(['middleware' => 'checkLogin'], function(){

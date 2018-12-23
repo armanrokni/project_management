@@ -44,13 +44,17 @@ if (token) {
  * allows your team to easily build robust real-time web applications.
  */
 
-// import Echo from 'laravel-echo'
+import Echo from 'laravel-echo'
 
-// window.Pusher = require('pusher-js');
+window.Pusher = require('pusher-js');
 
-// window.Echo = new Echo({
-//     broadcaster: 'pusher',
-//     key: process.env.MIX_PUSHER_APP_KEY,
-//     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
-//     encrypted: true
-// });
+
+// Note to change the authEndpoint Route 
+window.Echo = new Echo({
+	authEndpoint : 'http://localhost:8888/laravel_chat/public/broadcasting/auth',
+    broadcaster: 'pusher',
+    key: 'da5043d1b4d90ed1742f',
+    cluster: 'eu',
+    encrypted: true
+});
+
