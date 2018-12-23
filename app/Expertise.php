@@ -6,6 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Expertise extends Model
 {
-    //
-    protected $fillable = ['title'];
+  protected $table = 'expertises';
+
+  protected $fillable = [
+      'title',
+  ];
+
+  public function User(){
+       return $this->hasMany('App\User');
+   }
 }

@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,9 +9,30 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\User;
+use App\Http\Middleware\CheckLogin;
+use Illuminate\Http\Request;
+use App\Libraries\Sms;
 
-Route::get('/', function () {
-    return view('admin.master.masterpage');
+Route::group(['middleware' => ['checkLogin', 'checkRole']], function(){
+    Route::get('/', 'DashboardController@index');
+});
+
+Route::group(['prefix' => 'admin', 'middleware' => ['checkLogin', 'checkRole']], function(){
+    Route::group(['prefix' => 'users'], function(){
+        Route::get('insert','UserController@insertView' );
+        Route::post('insert', 'UserController@insert');
+        Route::get('/','UserController@index');
+        Route::get('edit/{id}', 'UserController@edit');
+        Route::post('update/{id}', 'UserController@update');
+        Route::get('delete/{id}', 'UserController@delete');
+      });
+
+});
+
+Route::group(['middleware' => 'checkLogin'], function(){
+    Route::get('profile', 'ProfileController@index');
+    Route::post('/profile/update', 'ProfileController@update');
 });
 
 #technology controller routes
