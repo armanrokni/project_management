@@ -41,7 +41,7 @@ Route::group(['namespace' => 'Auth'],function(){
     // Authentication Routes...
     Route::get('login', 'LoginController@showLoginForm')->name('login');
     Route::post('login', 'LoginController@login');
-    Route::get('logout', 'LoginController@logout')->name('logout');
+    Route::get('myLogout', 'LoginController@customLogout')->name('logout');
 
     // Password Reset Routes...
     Route::get('password/reset', 'ForgotPasswordController@showLinkRequestForm')->name('password.reset');
