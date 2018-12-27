@@ -35,7 +35,6 @@ Route::group(['middleware' => 'checkLogin'], function(){
     Route::post('/profile/update', 'ProfileController@update');
 });
 
-<<<<<<< HEAD
 // Auth::routes();
 
 Route::group(['namespace' => 'Auth'],function(){
@@ -52,7 +51,7 @@ Route::group(['namespace' => 'Auth'],function(){
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
-=======
+
 #technology controller routes
 Route::get('/technology' , 'TechnologyController@show');
 Route::post('/technology' , 'TechnologyController@add');
@@ -66,4 +65,3 @@ Route::post('/expertise' , 'ExpertiseController@add');
 Route::get('/expertise/edit/{id}' , 'ExpertiseController@edit')->where('id', '[0-9]+');
 Route::post('/expertise/update/{id}' , 'ExpertiseController@update')->where('id', '[0-9]+');
 Route::get('/expertise/delete/{id}' , 'ExpertiseController@delete')->where('id', '[0-9]+');
->>>>>>> 7235696831cb4f9ffa809adbaff51831f3b4d008
