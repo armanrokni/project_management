@@ -10,7 +10,6 @@
 |
 */
 use App\User;
-use App\Http\Middleware\CheckLogin;
 use Illuminate\Http\Request;
 use App\Libraries\Sms;
 
@@ -83,3 +82,4 @@ Route::post('/expertise' , 'ExpertiseController@add');
 Route::get('/expertise/edit/{id}' , 'ExpertiseController@edit')->where('id', '[0-9]+');
 Route::post('/expertise/update/{id}' , 'ExpertiseController@update')->where('id', '[0-9]+');
 Route::get('/expertise/delete/{id}' , 'ExpertiseController@delete')->where('id', '[0-9]+');
+
