@@ -10,7 +10,6 @@
 |
 */
 use App\User;
-use App\Http\Middleware\CheckLogin;
 use Illuminate\Http\Request;
 use App\Libraries\Sms;
 
@@ -28,6 +27,24 @@ Route::group(['prefix' => 'admin', 'middleware' => ['checkLogin', 'checkRole']],
         Route::get('delete/{id}', 'UserController@delete');
       });
 
+
+
+
+    // Routes for chats API
+	Route::group([/*'middleware' => 'admin'*/], function() {
+
+		Route::get('chat', 'ChatsController@index');
+		Route::get('messages/{id}', 'ChatsController@fetchMessages');
+
+
+		Route::post('/users', 'ChatsController@users');
+		Route::post('seen/{id}', 'ChatsController@seen');
+		Route::post('messages', 'ChatsController@sendMessage');
+		Route::post('user/{user}/online', 'ChatsController@Online');
+
+	});
+
+
 });
 
 Route::group(['middleware' => 'checkLogin'], function(){
@@ -41,7 +58,9 @@ Route::group(['namespace' => 'Auth'],function(){
     // Authentication Routes...
     Route::get('login', 'LoginController@showLoginForm')->name('login');
     Route::post('login', 'LoginController@login');
+
     Route::get('myLogout', 'LoginController@customLogout')->name('logout');
+
 
     // Password Reset Routes...
     Route::get('password/reset', 'ForgotPasswordController@showLinkRequestForm')->name('password.reset');
@@ -65,3 +84,4 @@ Route::post('/expertise' , 'ExpertiseController@add');
 Route::get('/expertise/edit/{id}' , 'ExpertiseController@edit')->where('id', '[0-9]+');
 Route::post('/expertise/update/{id}' , 'ExpertiseController@update')->where('id', '[0-9]+');
 Route::get('/expertise/delete/{id}' , 'ExpertiseController@delete')->where('id', '[0-9]+');
+
