@@ -15,14 +15,17 @@ class CreateTimeLinesTable extends Migration
     {
         Schema::create('time_lines', function (Blueprint $table) {
             $table->increments('id');
-            $table->tinyInteger('project_id');
+            $table->UnsignedInteger('project_id');
             $table->tinyInteger('status');
             $table->date('startTime');
             $table->date('endTime');
-            $table->integer('user_id');
+            $table->UnsignedInteger('user_id');
             $table->string('title');
             $table->tinyInteger('percent');
-            $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE')->onUpdate('CASCADE');
+
+            
         });
     }
 

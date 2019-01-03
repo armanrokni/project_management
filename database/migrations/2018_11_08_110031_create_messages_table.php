@@ -15,10 +15,10 @@ class CreateMessagesTable extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('content');
+            $table->string('content');
             $table->date('createdAt');
-            $table->integer('reciver_id');
-            $table->integer('sender_id');
+            $table->UnsignedInteger('reciver_id');
+            $table->UnsignedInteger('sender_id');
             $table->tinyInteger('status');
             $table->tinyInteger('type');
             $table->timestamps();

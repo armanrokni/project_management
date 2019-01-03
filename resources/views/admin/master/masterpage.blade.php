@@ -223,20 +223,16 @@
                                 <a href="{{url('/')}}" class="waves-effect"><i class="fa fa-home"></i> <span> Dashboard </span> </a>
 
                             </li>
-
                             <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-project-diagram"></i> <span>projects</span>  </a>
-                                <ul class="list-unstyled">
-                                    <li><a href="ui-buttons.html">submenue</a></li>
-                                    <li><a href="ui-loading-buttons.html">submenue</a></li>
-                                </ul>
+                                <a href="{{url('project')}}" class="waves-effect"><i class="fa fa-project-diagram"></i> <span>پروژه ها</span>  </a>
+                               
                             </li>
 
                             <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-cog"></i><span>امکانات</span> </a>
+                                <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-cog"></i><span> technologies </span> </a>
                                 <ul class="list-unstyled">
-                                    <li><a href="{{url('/expertise')}}">مهارت ها</a></li>
-                                    <li><a href="{{url('/technology')}}">تکنولوژی ها</a></li>
+                                    <li><a href="components-grid.html">submenue</a></li>
+                                    <li><a href="components-widgets.html">submenue</a></li>
                                 </ul>
                             </li>
 
@@ -297,9 +293,7 @@
 
                 </div> <!-- content -->
 
-                <footer class="footer text-right">
-                    © 2016. All rights reserved.
-                </footer>
+                
 
             </div>
 

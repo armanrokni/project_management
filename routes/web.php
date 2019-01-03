@@ -15,8 +15,32 @@ use App\Libraries\Sms;
 
 Route::group(['middleware' => ['checkLogin', 'checkRole']], function(){
     Route::get('/', 'DashboardController@index');
-});
+	});
 
+	Route::prefix('project')->group(function(){
+
+		Route::get('/','ProjectController@index');
+		Route::post('insert','ProjectController@insert');
+		Route::get('edit/{id}','ProjectController@edit');
+		Route::post('edit','ProjectController@update');
+		Route::get('delete/{id}','ProjectController@delete');
+		Route::get('info/{id}','ProjectController@showInfo');
+		Route::post('user','UserController@insertUserIntoProject');
+		Route::get('user/delete/{project_id}/{user_id}','UserController@deleteUser');
+		Route::post('file','FileController@insert');
+		Route::get('file/delete/{id}','FileController@delete');
+		Route::post('reports','ReportsController@insert');
+		Route::get('reports/delete/{id}','ReportsController@delete');
+		Route::post('timeLine','timeLineController@insert');
+		Route::post('timeLine/users','timeLineController@show');
+		Route::get('timeLine/delete/{id}','timeLineController@delete');
+		Route::get('timeLine/edit/{id}','timeLineController@finished');
+
+
+	});
+
+
+	 
 Route::group(['prefix' => 'admin', 'middleware' => ['checkLogin', 'checkRole']], function(){
     Route::group(['prefix' => 'users'], function(){
         Route::get('insert','UserController@insertView' );

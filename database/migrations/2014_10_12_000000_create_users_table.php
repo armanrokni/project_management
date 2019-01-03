@@ -27,6 +27,8 @@ class CreateUsersTable extends Migration
           $table->timestamps();
           $table->foreign('expertise_id')->references('id')->on('expertises')->onDelete('cascade')->onUpdate('cascade');
         });
+
+
     }
 
     /**
