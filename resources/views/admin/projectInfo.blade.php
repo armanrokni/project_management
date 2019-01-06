@@ -120,7 +120,7 @@
                 </div>
                 <div class="card-box" style="border:none;"> 
                     <div class="panel-heading" >
-                        <h4 class="m-t-0 header-title">گزارشات</h4>
+                        <h4 class="m-t-0 header-title"></h4>
                     </div>                               
                     <div class="p-20">
                         <table class="table table-bordered m-0">
