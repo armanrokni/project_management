@@ -423,46 +423,28 @@
         </script>
 
         <!-- jQuery  -->
-        <script src="{{asset('public/')}}public/adminPanel/assets/js/jquery.min.js"></script>
-        <script src="{{asset('public/')}}public/adminPanel/assets/js/bootstrap-rtl.min.js"></script>
-        <script src="{{asset('public/')}}public/adminPanel/assets/js/detect.js"></script>
-        <script src="{{asset('public/')}}public/adminPanel/assets/js/fastclick.js"></script>
-        <script src="{{asset('public/')}}public/adminPanel/assets/js/jquery.slimscroll.js"></script>
-        <script src="{{asset('public/')}}public/adminPanel/assets/js/jquery.blockUI.js"></script>
-        <script src="{{asset('public/')}}public/adminPanel/assets/js/waves.js"></script>
-        <script src="{{asset('public/')}}public/adminPanel/assets/js/wow.min.js"></script>
-        <script src="{{asset('public/')}}public/adminPanel/assets/js/jquery.nicescroll.js"></script>
-        <script src="{{asset('public/')}}public/adminPanel/assets/js/jquery.scrollTo.min.js"></script>
+        <script src="{{asset('')}}public/adminPanel/assets/js/jquery.min.js"></script>
+        <script src="{{asset('')}}public/adminPanel/assets/js/bootstrap-rtl.min.js"></script>
+        <script src="{{asset('')}}public/adminPanel/assets/js/detect.js"></script>
+        <script src="{{asset('')}}public/adminPanel/assets/js/fastclick.js"></script>
+        <script src="{{asset('')}}public/adminPanel/assets/js/jquery.slimscroll.js"></script>
+        <script src="{{asset('')}}public/adminPanel/assets/js/jquery.blockUI.js"></script>
+        <script src="{{asset('')}}public/adminPanel/assets/js/waves.js"></script>
+        <script src="{{asset('')}}public/adminPanel/assets/js/wow.min.js"></script>
+        <script src="{{asset('')}}public/adminPanel/assets/js/jquery.nicescroll.js"></script>
+        <script src="{{asset('')}}public/adminPanel/assets/js/jquery.scrollTo.min.js"></script>
 
-        <script src="{{asset('public/')}}public/adminPanel/assets/plugins/tiny-editable/mindmup-editabletable.js"></script>
-        <script src="{{asset('public/')}}public/adminPanel/assets/pages/datatables.editable.init.js"></script>
-        <script src="{{asset('public/')}}public/adminPanel/assets/plugins/magnific-popup/js/jquery.magnific-popup.min.js"></script>
-        <script src="{{asset('public/')}}public/adminPanel/assets/plugins/tiny-editable/numeric-input-example.js"></script>
-        <script src="{{asset('public/')}}public/adminPanel/assets/plugins/jquery-datatables-editable/jquery.dataTables.js"></script>
-  	    <script src="assets/plugins/datatables/dataTables.bootstrap.js"></script>
-        <script src="{{ asset('public/adminPanel/assets/js/jquery.min.js') }}"></script>
-        <script src="{{ asset('public/adminPanel/assets/js/bootstrap-rtl.min.js') }}"></script>
-        <script src="{{ asset('public/adminPanel/assets/js/detect.js') }}"></script>
-        <script src="{{ asset('public/adminPanel/assets/js/fastclick.js') }}"></script>
-        <script src="{{ asset('public/adminPanel/assets/js/jquery.slimscroll.js') }}"></script>
-        <script src="{{ asset('public/adminPanel/assets/js/jquery.blockUI.js') }}"></script>
-        <!-- <script src="{{ asset('public/adminPanel/assets/js/waves.js') }}"></script> -->
-        <script src="{{ asset('public/adminPanel/assets/js/wow.min.js') }}"></script>
-        <script src="{{ asset('public/adminPanel/assets/js/jquery.nicescroll.js') }}"></script>
-        <script src="{{ asset('public/adminPanel/assets/js/jquery.scrollTo.min.js') }}"></script>
-
-        <script src="{{ asset('public/adminPanel/assets/plugins/tiny-editable/mindmup-editabletable.js') }}"></script>
-        <script src="{{ asset('public/adminPanel/assets/pages/datatables.editable.init.js') }}"></script>
-        <script src="{{ asset('public/adminPanel/assets/plugins/magnific-popup/js/jquery.magnific-popup.min.js') }}"></script>
-        <script src="{{ asset('public/adminPanel/assets/plugins/tiny-editable/numeric-input-example.js') }}"></script>
-        <script src="{{ asset('public/adminPanel/assets/plugins/jquery-datatables-editable/jquery.dataTables.js') }}"></script>
-  	    <script src="{{ asset('public/adminPanel/assets/plugins/datatables/dataTables.bootstrap.js') }}"></script>
-
+        <script src="{{asset('')}}public/adminPanel/assets/plugins/tiny-editable/mindmup-editabletable.js"></script>
+        <script src="{{asset('')}}public/adminPanel/assets/pages/datatables.editable.init.js"></script>
+        <script src="{{asset('')}}public/adminPanel/assets/plugins/magnific-popup/js/jquery.magnific-popup.min.js"></script>
+        <script src="{{asset('')}}public/adminPanel/assets/plugins/tiny-editable/numeric-input-example.js"></script>
+        <script src="{{asset('')}}public/adminPanel/assets/plugins/jquery-datatables-editable/jquery.dataTables.js"></script>
+  	    <script src="{{asset('')}}public/adminPanel/assets/plugins/datatables/dataTables.bootstrap.js"></script>
 
         <script src="{{ asset('public/adminPanel/assets/js/jquery.core.js') }}"></script>
         <script src="{{ asset('public/adminPanel/assets/js/jquery.app.js') }}"></script>
 
-<!--         <script type="text/javascript" src="{{ asset('public/') }}adminPanel/assets/pages/jquery.form-advanced.init.js"></script> -->
+<!--         <script type="text/javascript" src="{{ asset('') }}adminPanel/assets/pages/jquery.form-advanced.init.js"></script> -->
         <script src="{{ asset('public/adminPanel/assets/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js') }}" type="text/javascript"></script>
         <script src="{{ asset('public/adminPanel/assets/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js') }}"></script>
         <script src="{{ asset('public/adminPanel/assets/plugins/switchery/js/switchery.min.js') }}"></script>
@@ -473,15 +455,18 @@
         <script src="{{ asset('public/adminPanel/assets/plugins/bootstrap-touchspin/js/jquery.bootstrap-touchspin.min.js') }}" type="text/javascript"></script>
         <script src="{{ asset('public/adminPanel/assets/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js') }}" type="text/javascript"></script>
 
-        <!-- <script type="text/javascript" src="{{ asset('public/') }}adminPanel/assets/plugins/autocomplete/jquery.mockjax.js"></script> -->
-        <!-- <script type="text/javascript" src="{{ asset('public/') }}adminPanel/assets/plugins/autocomplete/jquery.autocomplete.min.js"></script> -->
-        <!-- <script type="text/javascript" src="{{ asset('public/') }}adminPanel/assets/plugins/autocomplete/countries.js"></script> -->
-        <!-- <script type="text/javascript" src="{{ asset('public/') }}adminPanel/assets/pages/autocomplete.js"></script> -->
-        <script>
-  			$('#mainTable').editableTableWidget().numericInputExample().find('td:first').focus();
+        <script type="text/javascript" src="{{ asset('') }}adminPanel/assets/plugins/autocomplete/jquery.mockjax.js"></script>
+        <script type="text/javascript" src="{{ asset('') }}adminPanel/assets/plugins/autocomplete/jquery.autocomplete.min.js"></script>
+        <script type="text/javascript" src="{{ asset('') }}adminPanel/assets/plugins/autocomplete/countries.js"></script>
+        <script type="text/javascript" src="{{ asset('') }}adminPanel/assets/pages/autocomplete.js"></script>
+        
+        <script src="{{asset('public')}}/adminPanel/assets/js/jquery.min.js">
+  			   $('#mainTable').editableTableWidget().numericInputExample().find('td:first').focus();
+  		  </script>
 
-  		</script>
-
-      <script src="{{ asset('public/js/app.js') }}" defer></script>
+<!-- 
+        <script src="{{ asset('public/js/app.js') }}" defer>
+          
+        </script> -->
     </body>
 </html>
