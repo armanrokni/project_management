@@ -54,7 +54,7 @@
                 <!-- LOGO -->
                 <div class="topbar-left topbar-left-sm">
                     <div class="text-center">
-                        <a href="index.html" class="logo"><i class="icon-magnet icon-c-logo"></i><img style="height:40px;" src="{{ asset('public/adminPanel/logo/avand logo.png') }}"></a>
+                        <a href="{{url('/')}}" class="logo"><i class="icon-magnet icon-c-logo"></i><img style="height:40px;" src="{{ asset('public/adminPanel/logo/avand logo.png') }}"></a>
                         <!-- Image Logo here -->
                         <!--<a href="index.html" class="logo">-->
                             <!--<i class="icon-c-logo"> <img src="assets/images/logo_sm.png" height="42"/> </i>-->
