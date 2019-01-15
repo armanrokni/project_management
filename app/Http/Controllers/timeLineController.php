@@ -20,26 +20,19 @@ use validate;
 class timeLineController extends Controller
 {
     public function insert(Request $request){
- 
+
         $this->validate($request,
         [
             'project_id' => 'required',
-            'user_id' => 'required',                       
-            'startTime' => 'required',                       
-            'endTime' => 'required',                       
+            'user_id' => 'required',
+            'startTime' => 'required',
+            'endTime' => 'required',
             'title' => 'required',
             'percent' => 'required',
         ]);
-        // $jdf=new Jdf;
-        // $jd = $jdf->tr_num($jdf->jdate('Y/n/j'));
-        // echo $jd.' '.$request->startTime.'    '.$request->endTime;die;
-        // if($request->startTime>$jd && $request->endTime>$jd) {
-        //   $st = 1 ;  echo 'y';die; 
-        // }
-        // elseif($request->startTime<$jd && $request->endTime<$jd){
-        //   $st = 2 ;  echo 'y';die;
-        // }
+
         $one = new Time_line($request->all());
+        $one->status = 2;
     	$one->save();
     	return redirect()->back()->with('success','ذخیره شد')->with('section','timeLine');
     }
@@ -48,6 +41,7 @@ class timeLineController extends Controller
     public function finished(Request $request){
     	$tl = timeLine::find($request->id);
     		$tl->status = 2;
+        $tl = User::find(\Auth::user()->id);
     	$tl->update();
     	return redirect('project/timeLine')->with('success','ویرایش با موفقیت انجام شد');
     }
@@ -56,7 +50,7 @@ class timeLineController extends Controller
     	$one= Time_line::find($request->id);
     	if($one){
           $one->delete();
-          return back()->with('success','حذف با موفقیت انجام شد')->with('section','timeLine'); 
+          return back()->with('success','حذف با موفقیت انجام شد')->with('section','timeLine');
     	}
     }
 }

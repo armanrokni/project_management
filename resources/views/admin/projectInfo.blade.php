@@ -1,49 +1,50 @@
 @extends('admin.master.masterpage')
 @section('content')
-<div class="row"> 
+<div class="row">
     <div class="col-lg-12">
         <div class="panel-heading" >
             <h4 class="m-t-0 header-title"> اطلاعات تکمیلی پروژه {{$project->title}}</h4>
-        </div> 
-        <ul class="nav nav-tabs">                           
+        </div>
+        <ul class="nav nav-tabs">
             <li class="@if((Session::has('section') && Session::get('section') == 'user') || !Session::has('section'))
                     active
-                @endif"> 
-                <a href="#user" data-toggle="tab" aria-expanded="false"> 
-                    <span class="visible-xs"><i class="fa fa-envelope-o"></i></span> 
-                    <span class="hidden-xs">افزودن کاربر</span> 
-                </a> 
-            </li> 
+                @endif">
+                <a href="#user" data-toggle="tab" aria-expanded="false">
+                    <span class="visible-xs"><i class="fa fa-envelope-o"></i></span>
+                    <span <?php if(\Auth::user()->Role == 'user'){echo "style= 'display:none'";} ?> class="hidden-xs">افزودن کاربر</span>
+                </a>
+            </li>
             <li class="@if(Session::has('section') && Session::get('section') == 'file' )
                         active
-                 @endif"> 
-                <a href="#file" data-toggle="tab" aria-expanded="false"> 
-                    <span class="visible-xs"><i class="fa fa-cog"></i></span> 
-                    <span class="hidden-xs">افزودن فایل</span> 
-                </a> 
-            </li> 
+                 @endif">
+                <a href="#file" data-toggle="tab" aria-expanded="false">
+                    <span class="visible-xs"><i class="fa fa-cog"></i></span>
+                    <span class="hidden-xs">افزودن فایل</span>
+                </a>
+            </li>
             <li class="@if(Session::has('section') && Session::get('section') == 'reports' )
                         active
-                 @endif"> 
-                <a href="#reports" data-toggle="tab" aria-expanded="false"> 
-                    <span class="visible-xs"><i class="fa fa-cog"></i></span> 
-                    <span class="hidden-xs">گزارشات</span> 
-                </a> 
-            </li> 
-            <li class="@if(Session::has('section') && Session::get('section') == 'timeLine') 
+                 @endif">
+                <a href="#reports" data-toggle="tab" aria-expanded="false">
+                    <span class="visible-xs"><i class="fa fa-cog"></i></span>
+                    <span class="hidden-xs">گزارشات</span>
+                </a>
+            </li>
+            <li class="@if(Session::has('section') && Session::get('section') == 'timeLine')
                     active
-                @endif"> 
-                <a href="#timeLine" data-toggle="tab" aria-expanded="false"> 
-                    <span class="visible-xs"><i class="fa fa-cog"></i></span> 
-                    <span class="hidden-xs"> زمانبندی پروژه</span> 
-                </a> 
-            </li> 
+                @endif">
+                <a href="#timeLine" data-toggle="tab" aria-expanded="false">
+                    <span class="visible-xs"><i class="fa fa-cog"></i></span>
+                    <span class="hidden-xs"> زمانبندی پروژه</span>
+                </a>
+            </li>
         </ul>
 
-        <div class="tab-content">                  
+        <div class="tab-content">
+          @if(\Auth::user()->Role == 'admin')
             <div class="tab-pane @if((Session::has('section') && Session::get('section') == 'user') || !Session::has('section'))
                     active
-                @endif" id="user"> 
+                @endif" id="user">
                 <div class="card-box" style="border:none;">
                     <form class="form-horizontal" method="post" action="{{url('project/user')}}">
                         {{csrf_field()}}
@@ -56,11 +57,11 @@
                                     <option value="0"></option>
                                         @foreach($user as $u)
                                             <option value="{{$u->id}}">{{$u->fullname}}</option>
-                                        @endforeach  
+                                        @endforeach
                                 </select>
                             </div>
-                        </div>         
-                        
+                        </div>
+
                         <div class="form-group" >
                             <button type="submit" class="btn btn-default waves-effect" style="width: 90px;right:65%;text-align: center;"><b> ثبت</b></button>
                         </div>
@@ -68,7 +69,7 @@
                 </div>
                 <div class="card-box" style="border:none;">
                     <div class="p-20">
-                        <table class="table table-bordered m-0">                                
+                        <table class="table table-bordered m-0">
                             <thead>
                                 <tr>
                                     <th>ردیف</th>
@@ -85,23 +86,24 @@
                                         <td>{{$value->userInfo->fullname}} </td>
                                         <td>
                                             <a href="{{url('project/user/delete').'/'.$project->id.'/'.$value->userInfo->id}}">حذف</a>&nbsp&nbsp
-                                        </td>                 
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>
                         </table>
                     </div>
-                </div>    
-            </div> 
-
+                </div>
+            </div>
+          @endif
 
             <div class="tab-pane @if(Session::has('section') && Session::get('section') == 'file' )
                         active
                 @endif" id="file">
-                <div class="card-box" style="border:none;">        
+                <div class="card-box" style="border:none;">
                     <form class="form-horizontal" method="post" action="{{url('project/file')}}" enctype="multipart/form-data">
                         {{csrf_field()}}
                         <input type="hidden" name="project_id" value="{{$project->id}}" >
+                        <input type="hidden" name="user_id" value="{{\Auth()->user()->id}}" >
                         <div class="form-group">
                             <label class="col-md-1 control-label">افزودن فایل</label>
                             <div class="col-md-6">
@@ -112,22 +114,23 @@
                                         </span>
                                     @endif
                             </div>
-                        </div>     
+                        </div>
                         <div class="form-group" >
                             <button type="submit" class="btn btn-default waves-effect" style="width: 90px;right:65%;text-align: center;"><b> ثبت</b></button>
                         </div>
                     </form>
                 </div>
-                <div class="card-box" style="border:none;"> 
+                <div class="card-box" style="border:none;">
                     <div class="panel-heading" >
                         <h4 class="m-t-0 header-title">گزارشات</h4>
-                    </div>                               
+                    </div>
                     <div class="p-20">
                         <table class="table table-bordered m-0">
-                            
+
                             <thead>
                                 <tr>
                                     <th>ردیف</th>
+                                    <th>نام کاربری</th>
                                     <th>نام فایل</th>
                                     <th>حذف </th>
                                 </tr>
@@ -138,29 +141,30 @@
                                 @foreach($file as $f)
                                     <tr>
                                         <td>{{$counter++}}</td>
-                                        <td>{{$f->fileName}}</td>  
+                                        <td>{{$f->userInfo->fullname}}</td>
+                                        <td>{{$f->fileName}}</td>
                                         <td>
                                             <a href="{{url('project/file/delete').'/'.$f->id}}">حذف</a>
                                             &nbsp&nbsp
-                                       </td>                   
+                                       </td>
                                     </tr>
-                                @endforeach        
+                                @endforeach
                             </tbody>
                         </table>
-                    </div>   
+                    </div>
                 </div>
-            </div> 
+            </div>
             <div class="tab-pane @if(Session::has('section') && Session::get('section') == 'reports' )
                         active
-                 @endif" id="reports"> 
+                 @endif" id="reports">
                 <div class="card-box" style="border:none;">
                     <div class="panel-heading" >
                         <h4 class="m-t-0 header-title">ایجاد گزارش جدید</h4>
-                    </div>                          
-                    <form class="form-horizontal" method="post" action="{{url('project/reports')}}" > 
+                    </div>
+                    <form class="form-horizontal" method="post" action="{{url('project/reports')}}" >
                         {{csrf_field()}}
                         <input type="hidden" name="project_id" value="{{$project->id}}" >
-                        <input type="hidden" name="user_id" value="4" >
+                        <input type="hidden" name="user_id" value="{{\Auth()->user()->id}}" >
                         <div class="form-group">
                             <label class="col-md-1 control-label">توضیحات</label>
                             <div class="col-md-6">
@@ -171,19 +175,19 @@
                                         </span>
                                     @endif
                             </div>
-                        </div> 
-                        <div class="form-group" > 
+                        </div>
+                        <div class="form-group" >
                             <button type="submit" class="btn btn-default waves-effect" style="width: 90px;right:65%;text-align: center;"><b> ثبت</b></button>
                         </div>
                     </form>
-                </div> 
-                <div class="card-box" style="border:none;"> 
+                </div>
+                <div class="card-box" style="border:none;">
                     <div class="panel-heading" >
                         <h4 class="m-t-0 header-title">گزارشات</h4>
-                    </div>                               
+                    </div>
                     <div class="p-20">
                         <table class="table table-bordered m-0">
-                            
+
                             <thead>
                                 <tr>
                                     <th>ردیف</th>
@@ -206,30 +210,30 @@
                                 @foreach($report as $rep)
                                     <tr>
                                         <td>{{$counter++}}</td>
-                                        <td>{{$rep->userInfo->fullname}}</td>  
+                                        <td> <?php if(\Auth::user()->Role == 'admin'){ echo $rep->userInfo->fullname ;} elseif(\Auth::user()->Role == 'user'){ echo 'خودم' ;} ?> </td>
                                         <td>{{$jdf->jdate('H:i , Y-n-j',$rep->createdAt)}}</td>
                                         <td>{{$rep->description}}</td>
                                         <td>
                                             <a href="{{url('project/reports/delete').'/'.$rep->id}}">حذف</a>&nbsp&nbsp
-                                       </td>                   
+                                       </td>
                                     </tr>
-                                @endforeach        
+                                @endforeach
                             </tbody>
                         </table>
-                    </div>   
+                    </div>
                 </div>
-            </div> 
-            <div class="tab-pane @if(Session::has('section') && Session::get('section') == 'timeLine') 
+            </div>
+            <div class="tab-pane @if(Session::has('section') && Session::get('section') == 'timeLine')
                     active
-                @endif" id="timeLine"> 
+                @endif" id="timeLine">
                 <div class="card-box" style="border:none;">
                     <div class="panel-heading" >
                         <h4 class="m-t-0 header-title">ایجاد وظیفه جدید</h4>
-                    </div>                         
+                    </div>
                     <form class="form-horizontal" method="post" action="{{url('project/timeLine')}}">
                         {{csrf_field()}}
                         <input type="hidden" name="project_id" value="{{$project->id}}" >
-                        <input type="hidden" name="user_id" value="3" >
+                        <input type="hidden" name="user_id" value="{{\Auth()->user()->id}}" >
                         <div class="form-group">
                             <label class="col-md-1 control-label">عنوان</label>
                             <div class="col-md-6">
@@ -241,7 +245,7 @@
                             <div class="col-md-6">
                                 <input type="text" name="startTime" class=" form-control" placeholder="روز/ماه/سال">
                             </div>
-                        </div>         
+                        </div>
                         <div class="form-group">
                             <label class="col-md-1 control-label">تاریخ پایان</label>
                             <div class="col-md-6">
@@ -257,20 +261,20 @@
                         <div class="form-group" >
                             <button type="submit" class="btn btn-default waves-effect" style="width: 90px;right:65%;text-align: center;"><b> ثبت</b></button>
                         </div>
-                    </form>   
+                    </form>
                     <form class="form-horizontal" method="post" action="{{url('project/timeLine/users')}}">
 
 
-                    </form>        
+                    </form>
                 </div>
 
-                <div class="card-box" style="border:none;"> 
+                <div class="card-box" style="border:none;">
                     <div class="panel-heading" >
                         <h4 class="m-t-0 header-title">زمانبندی وظایف</h4>
-                    </div>                               
+                    </div>
                     <div class="p-20">
                         <table class="table table-bordered m-0">
-                            
+
                             <thead>
                                 <tr>
                                     <th>ردیف</th>
@@ -296,10 +300,10 @@
                                     <tr>
                                         <td>{{$counter++}}</td>
                                         <td>{{$tl->userInfo->fullname}}</td>
-                                        <td>{{$tl->title}}</td>  
+                                        <td>{{$tl->title}}</td>
                                         <td>{{$tl->startTime}}</td>
                                         <td>{{$tl->endTime}}</td>
-                                        <td>{{$tl->percent}}</td>  
+                                        <td>{{$tl->percent}}</td>
                                         <td>
                                             @if($tl->status == 1)
                                                 @if($tl->startTime > $jdf->tr_num($jdf->jdate('Y-m-d')))
@@ -316,15 +320,15 @@
                                         <td>
                                             <a href="{{url('project/timeLine/delete').'/'.$tl->id}}">حذف</a>&nbsp&nbsp
                                             <a href="{{url('project/timeLine/finished').'/'.$tl->id}}">پایان یافته</a>
-                                       </td>                   
+                                       </td>
                                     </tr>
-                                @endforeach    
+                                @endforeach
                             </tbody>
                         </table>
-                    </div>   
+                    </div>
                 </div>
-            </div> 
-        </div> 
+            </div>
+        </div>
     </div>
 </div>
 

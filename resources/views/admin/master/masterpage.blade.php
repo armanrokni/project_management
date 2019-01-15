@@ -54,7 +54,7 @@
                 <!-- LOGO -->
                 <div class="topbar-left topbar-left-sm">
                     <div class="text-center">
-                        <a href="index.html" class="logo"><i class="icon-magnet icon-c-logo"></i><img style="height:40px;" src="{{ asset('public/adminPanel/logo/avand logo.png') }}"></a>
+                        <a href="{{url('/')}}" class="logo"><i class="icon-magnet icon-c-logo"></i><img style="height:40px;" src="{{ asset('public/adminPanel/logo/avand logo.png') }}"></a>
                         <!-- Image Logo here -->
                         <!--<a href="index.html" class="logo">-->
                             <!--<i class="icon-c-logo"> <img src="assets/images/logo_sm.png" height="42"/> </i>-->
@@ -191,7 +191,7 @@
                                     <a href="#" class="right-bar-toggle waves-effect waves-light"><i class="far fa-comments"></i></a>
                                 </li>
                                 <li class="dropdown top-menu-item-xs">
-                                    <a href="" class="dropdown-toggle profile waves-effect waves-light" data-toggle="dropdown" aria-expanded="true"><img src="{{ asset('public/adminPanel/assets/images/users/avatar-1.jpg') }}" alt="user-img" class="img-circle"> </a>
+                                    <a href="" class="dropdown-toggle profile waves-effect waves-light" data-toggle="dropdown" aria-expanded="true"><img src="{{url('public').'/'.\Auth()->user()->avatar}}" alt="user-img" class="img-circle"> </a>
                                     <ul class="dropdown-menu">
                                         <li><a href="javascript:void(0)"><i class="ti-user m-r-10 text-custom"></i> Profile</a></li>
                                         <li><a href="javascript:void(0)"><i class="ti-settings m-r-10 text-custom"></i> Settings</a></li>
@@ -225,14 +225,14 @@
                             </li>
                             <li class="has_sub">
                                 <a href="{{url('project')}}" class="waves-effect"><i class="fa fa-project-diagram"></i> <span>پروژه ها</span>  </a>
-                               
+
                             </li>
 
                             <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-cog"></i><span> technologies </span> </a>
+                                <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-cog"></i><span> امکانات </span> </a>
                                 <ul class="list-unstyled">
-                                    <li><a href="components-grid.html">submenue</a></li>
-                                    <li><a href="components-widgets.html">submenue</a></li>
+                                    <li><a href="{{url('/expertise')}}">مهارت ها</a></li>
+                                    <li><a href="{{url('/technology')}}">تکنولوژی ها</a></li>
                                 </ul>
                             </li>
 
@@ -293,7 +293,7 @@
 
                 </div> <!-- content -->
 
-                
+
 
             </div>
 

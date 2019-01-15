@@ -38,12 +38,12 @@
             </div>
 
 
-            <div class="panel-body">
+            <div class="panel-body" style="margin-top:0px; margin-bottom:20%; margin-right:40%;">
             <form class="form-horizontal m-t-20" action="{{ route('login') }}" method="post">
                 @csrf
 
                 <div class="form-group ">
-                    <div class="col-xs-12">
+                    <div class="col-xs-5">
                         <input class="form-control" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" required="" name="phone" placeholder="{{ __('شماره همراه') }}" value="{{ old('phone') }}" required autofocus>
                             @if ($errors->has('phone'))
                                 <span class="invalid-feedback" role="alert">
@@ -54,7 +54,7 @@
                 </div>
 
                 <div class="form-group">
-                    <div class="col-xs-12">
+                    <div class="col-xs-5">
                         <input class="form-control" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" type="password" required="" name="password" placeholder="{{ __('کلمه عبور') }}">
                             @if ($errors->has('password'))
                                 <span class="invalid-feedback" role="alert">
@@ -65,7 +65,7 @@
                 </div>
 
                 <div class="form-group text-center m-t-40">
-                    <div class="col-xs-12">
+                    <div class="col-xs-2">
                         <button class="btn btn-green-dark btn-block text-uppercase waves-effect waves-light" type="submit">{{ __('ورود') }}</button>
                     </div>
                 </div>

@@ -39,4 +39,8 @@ class User extends Authenticatable
     public function Expertise(){
      return $this->belongsTo('App\Expertise');
    }
+
+   public function projects(){
+      return $this->belongsToMany(Project::class, 'project_managment', 'userId', 'projectId');
+    }
 }
